@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mb-4">Adicionar novo imóvel</h1>
+    <form method="POST" enctype="multipart/form-data" class="mb-4">
+        <div class="mb-3">
+            <label for="description" class="form-label">Descrição:</label>
+            <input type="text" id="description" name="description" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="util_area" class="form-label">Área Útil (m²):</label>
+            <input type="number" id="util_area" name="util_area" step="0.1" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="num_rooms" class="form-label">Qtd. Quartos:</label>
+            <input type="number" id="num_rooms" name="num_rooms" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Preço:</label>
+            <input type="number" id="price" name="price" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="num_garage" class="form-label">Qtd. Garagem:</label>
+            <input type="number" id="num_garage" name="num_garage" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="num_bathroom" class="form-label">Qtd. Banheiro:</label>
+            <input type="number" id="num_bathroom" name="num_bathroom" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="images" class="form-label">Carregar Imagens:</label>
+            <input type="file" id="images" name="images" class="form-control" multiple>
+        </div>
+        <button type="submit" class="btn btn-primary">Adicionar Imóvel</button>
+    </form>
+    <a href="/" class="btn btn-secondary">Voltar para lista</a>
+{% endblock %}

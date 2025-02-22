@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mb-4">Imóveis</h1>
+    <a href="/property/add" class="btn btn-primary mb-4">Adicionar Novo Imóvel</a>
+    <div class="row">
+        {% for property in properties %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='uploads/' + property[7].split(',')[0]) }}" class="card-img-top" alt="Property Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ property[1] }}</h5>
+                        <p class="card-text">{{ property[2] }}</p>
+                        <a href="{{ url_for('property_detail', id=property[0]) }}" class="btn btn-primary">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
